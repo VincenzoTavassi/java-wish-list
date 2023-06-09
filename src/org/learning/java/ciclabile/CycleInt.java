@@ -26,15 +26,15 @@ public class CycleInt {
         }
 
         public void addElemento(int number) {
-            if (numbers != null) {
-            int[] newArray = new int[numbers.length + 1];
+            if (numbers != null) { // Se l'array esiste già
+            int[] newArray = new int[numbers.length + 1]; // Creo un nuovo array con lunghezza +1
             for (int i = 0; i < numbers.length; i++) {
-                newArray[i] = numbers[i];
+                newArray[i] = numbers[i]; // Copio i numeri dell'array precedente
             }
-            newArray[newArray.length - 1] = number;
-            numbers = newArray;
+            newArray[newArray.length - 1] = number; // Inserisco il numero dell'utente all'ultima posizione
+            numbers = newArray; // Aggiorno array
             } else {
-                numbers = new int[]{number};
+                numbers = new int[]{number}; // Altrimenti creo il nuovo array con il numero dell'utente
             }
         }
 
