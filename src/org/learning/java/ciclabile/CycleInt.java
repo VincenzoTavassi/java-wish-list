@@ -10,6 +10,9 @@ public class CycleInt {
             this.numbers = numbers;
         }
 
+    public CycleInt() {
+    }
+
         public int getElementoSuccessivo() {
              if (lastPosition < numbers.length) {
                 int number = numbers[lastPosition];
@@ -23,12 +26,16 @@ public class CycleInt {
         }
 
         public void addElemento(int number) {
+            if (numbers != null) {
             int[] newArray = new int[numbers.length + 1];
             for (int i = 0; i < numbers.length; i++) {
                 newArray[i] = numbers[i];
             }
             newArray[newArray.length - 1] = number;
             numbers = newArray;
+            } else {
+                numbers = new int[]{number};
+            }
         }
 
     @Override
